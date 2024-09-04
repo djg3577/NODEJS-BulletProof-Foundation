@@ -6,7 +6,7 @@ import (
 )
 
 func InitArrayHashingRoutes(api *gin.RouterGroup) {
-    arrayHashingAPI := api.Group("/ah")
+    arrayHashingAPI := api.Group("/arrays")
     {
         arrayHashingAPI.GET("/", helloWorldHandler)
     }
