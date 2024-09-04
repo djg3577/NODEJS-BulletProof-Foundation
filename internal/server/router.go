@@ -1,7 +1,7 @@
 package server
 
 import (
-	arrayshashing "github.com/Tech-Ascend/tech-ascend-omega-backend/internal/arrays_hashing"
+	"github.com/Tech-Ascend/tech-ascend-omega-backend/internal/arrays"
 	"github.com/gin-gonic/gin"
 )
 
@@ -10,7 +10,7 @@ func SetupRouter() *gin.Engine {
 
 	api := router.Group("/api")
 
-	arrayshashing.InitArrayHashingRoutes(api)
+	arrays.InitArrayHashingRoutes(api)
 
 	return router
 }

@@ -1,4 +1,4 @@
-package arrayshashing
+package arrays
 
 import (
     "net/http"
