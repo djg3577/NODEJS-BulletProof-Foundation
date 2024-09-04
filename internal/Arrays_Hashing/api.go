@@ -1,0 +1,19 @@
+package arrayshashing
+
+import (
+    "net/http"
+    "github.com/gin-gonic/gin"
+)
+
+func InitArrayHashingRoutes(api *gin.RouterGroup) {
+    arrayHashingAPI := api.Group("/ah")
+    {
+        arrayHashingAPI.GET("/", helloWorldHandler)
+    }
+}
+
+func helloWorldHandler(c *gin.Context) {
+    c.JSON(http.StatusOK, gin.H{
+        "message": "HELLO WORLD",
+    })
+}
