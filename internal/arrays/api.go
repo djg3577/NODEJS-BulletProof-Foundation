@@ -1,19 +1,13 @@
 package arrays
 
 import (
-    "net/http"
     "github.com/gin-gonic/gin"
 )
 
 func InitArrayHashingRoutes(api *gin.RouterGroup) {
+    arraysHandler := &ArraysHandler{}
     arrayHashingAPI := api.Group("/arrays")
     {
-        arrayHashingAPI.GET("/", helloWorldHandler)
+        arrayHashingAPI.POST("/", arraysHandler.ContainsDuplicates)
     }
-}
-
-func helloWorldHandler(c *gin.Context) {
-    c.JSON(http.StatusOK, gin.H{
-        "message": "HELLO WORLD",
-    })
 }
