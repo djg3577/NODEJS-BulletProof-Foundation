@@ -13,11 +13,11 @@ type ArraysHandler struct {
 func (h *ArraysHandler) ContainsDuplicates(c *gin.Context) {
 	var numbers []int
 	if err := c.ShouldBindJSON(&numbers); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-		return
+			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+			return
 	}
 
-	containsDuplicate := h.Service.ContainsDuplicates(numbers)
+	result := h.Service.ContainsDuplicates(numbers)
 
-	c.JSON(http.StatusOK, gin.H{"containsDuplicates": containsDuplicate})
+	c.JSON(http.StatusOK, result)
 }
