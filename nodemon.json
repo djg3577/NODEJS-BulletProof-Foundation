@@ -1,0 +1,6 @@
+{
+  "watch": ["server", ".env"],
+  "ext": "js,ts,json",
+  "ignore": ["server/**/*.spec.ts"],
+  "exec": "node --inspect=127.0.0.1:9241 -r ts-node/register/transpile-only ./server/app.ts"
+}

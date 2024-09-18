@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "noImplicitOverride": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "pretty": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "noEmit": false,
+    "esModuleInterop": true,
+    "target": "ES2018",
+    "rootDir": "./",
+    "outDir": "dist",
+    "noImplicitAny": false
+  },
+  "include": ["server/**/*"],
+  "exclude": ["node_modules", "tests", "dist"]
+}
