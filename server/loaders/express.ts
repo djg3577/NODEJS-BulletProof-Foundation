@@ -16,26 +16,4 @@ export default ({ app }: { app: Application }) => {
   app.use(logMiddleware);
   // Load API routes
   app.use(routes());
-
-  /// error handlers
-  app.use((err, req, res, next) => {
-    /**
-     * Handle 401 thrown by express-jwt library
-     */
-    Logger.error(err);
-    if (err.name === "UnauthorizedError") {
-      return res.status(err.status).json({ message: err.message }).end();
-    }
-    return next(err);
-  });
-
-  app.use((err, req, res, next) => {
-    res.status(err.status || 500);
-    Logger.error(err);
-    res.json({
-      errors: {
-        message: err.message,
-      },
-    });
-  });
 };

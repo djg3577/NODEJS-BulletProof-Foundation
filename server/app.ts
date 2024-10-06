@@ -7,12 +7,7 @@ async function startServer() {
   const app = express();
   await loaders({ expressApp: app });
 
-  app.listen(4000, (err?: any) => {
-    if (err) {
-      console.log({ err });
-      Logger.error(err);
-      process.exit(1);
-    }
+  app.listen(4000, () => {
     Logger.info(`
 ########################################
   ⚛️  Server listening on port: 4000 ⚛️
